@@ -3,41 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anne Sofie Mikkelsen - Account Owner</title>
+    <title>Projektledelse - Kontorindretningsprojekt</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             margin: 0;
             padding: 20px;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
         .header {
             text-align: center;
             margin-bottom: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(10px);
         }
         
         .title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 10px;
+            font-size: 42px;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .subtitle {
-            font-size: 18px;
-            color: #666;
+            font-size: 20px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 400;
+            color: #34495e;
+            font-family: 'Georgia', serif;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .navigation {
@@ -59,14 +99,15 @@
         }
         
         .nav-button.active {
-            background-color: #000;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
             color: white;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.4);
         }
         
         .nav-button.inactive {
-            background-color: white;
-            color: #333;
-            border: 1px solid #ddd;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            color: #34495e;
+            border: 1px solid #bdc3c7;
         }
         
         .nav-button:hover {
@@ -74,193 +115,286 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
-        .content-box {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #000;
-        }
-        
-        .profile-header {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #000;
-            text-align: left;
-        }
-        
-        .profile-description {
-            color: #666;
+        .section {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-            font-size: 16px;
-            text-align: left;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .stat-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .contact-section {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .contact-item {
-            margin-bottom: 10px;
-        }
-        
-        .contact-label {
-            font-weight: bold;
-            color: #000;
-        }
-        
-        .contact-value {
-            color: #666;
-        }
-        
-        .competency-item {
-            background: white;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .competency-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #000;
-        }
-        
-        .competency-section {
-            margin-bottom: 15px;
-        }
-        
-        .competency-section h4 {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .competency-section p {
-            color: #666;
-            margin: 0;
-            font-size: 14px;
-        }
-        
-        .experience-item {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        
-        .experience-header {
-            padding: 20px;
-            cursor: pointer;
-            background: white;
-            transition: background 0.3s;
-        }
-        
-        .experience-header:hover {
-            background: #f8f9fa;
-        }
-        
-        .experience-title {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        
-        .experience-company {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .experience-details {
-            padding: 20px;
-            background: #f8f9fa;
-            border-top: 1px solid #eee;
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(10px);
             display: none;
         }
         
-        .experience-details.expanded {
+        .section.active {
             display: block;
         }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
+        .section-title {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #34495e;
+            text-align: center;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #34495e, #7f8c8d);
+            border-radius: 2px;
+        }
+
+        .problem-statement {
+            background: linear-gradient(145deg, #ecf0f1, #d5dbdb);
+            border-left: 4px solid #34495e;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #2c3e50;
+            font-weight: 300;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .methodology-explanation {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid #ecf0f1;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .methodology-explanation h4 {
+            color: #34495e;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .methodology-explanation p {
+            color: #7f8c8d;
+            line-height: 1.7;
             margin-bottom: 15px;
         }
-        
-        .skill-tag {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 8px 12px;
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tool-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid #ecf0f1;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
             text-align: center;
-            font-size: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
-        
-        .motivation-text {
-            color: #333;
-            line-height: 1.7;
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #bdc3c7;
+        }
+
+        .tool-card h4 {
+            color: #34495e;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .tool-card p {
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .phase-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .phase-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            padding: 25px;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            border: 1px solid #ecf0f1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .phase-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .phase-item:hover .phase-number {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+        }
+
+        .phase-title {
+            font-weight: 400;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .phase-description {
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            border: 1px solid #ecf0f1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .result-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #34495e;
+        }
+
+        .result-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #34495e, #7f8c8d);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .result-item:hover::after {
+            transform: scaleX(1);
+        }
+
+        .result-number {
+            font-size: 52px;
+            font-weight: 300;
+            color: #34495e;
+            display: block;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .result-item:hover .result-number {
+            transform: scale(1.1);
+            color: #2c3e50;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .result-label {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .key-learnings {
+            background: linear-gradient(145deg, #ecf0f1, #d5dbdb);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .key-learnings h3 {
+            color: #34495e;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        .learning-item {
             margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #2c3e50;
         }
-        
-        .hidden {
-            display: none;
+
+        .learning-item:hover {
+            transform: translateX(10px);
+            color: #34495e;
         }
-        
-        .link {
-            color: #0066cc;
-            text-decoration: none;
+
+        .learning-item::before {
+            content: "•";
+            color: #7f8c8d;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
         }
-        
-        .link:hover {
-            text-decoration: underline;
+
+        .learning-item:hover::before {
+            color: #34495e;
+            transform: scale(1.5);
         }
-        
+
         @media (max-width: 768px) {
             .navigation {
                 flex-direction: column;
@@ -271,168 +405,22 @@
                 width: 200px;
             }
             
-            .contact-grid {
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
             
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 30px;
-        }
-
-        .chart-container {
-            background: white;
-            border-radius: 10px;
-        }
-
-        .chart-container h3 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #000;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        #skillChart {
-            width: 100%;
-            height: 400px;
-            cursor: crosshair;
-        }
-
-        .skill-details {
-            background: white;
-            border-radius: 10px;
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-            text-align: left;
-        }
-
-        .skill-details h3 {
-            color: #000;
-            margin-bottom: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            align-items: left;
-            gap: 10px;
-        }
-
-        .skill-level {
-            background: #000;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: normal;
-        }
-
-        .skill-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .competency-section {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .competency-section h4 {
-            color: #000;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .competency-section p {
-            color: #666;
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-        }
-
-        .default-message {
-            text-align: left;
-            color: #666;
-            font-style: italic;
-            margin-top: 50px;
-        }
-
-        .default-message h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #000;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .results-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .header {
-                padding: 30px 20px;
+            .project-stats {
+                flex-direction: column;
+                gap: 15px;
             }
 
-            .header .title {
-                font-size: 28px;
+            .phase-grid {
+                flex-direction: column;
             }
-
-            .skill-details {
-                position: static;
-            }
-        }
-
-        .skill-point {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .skill-point:hover {
-            stroke-width: 3;
-            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
-        }
-
-        .skill-label {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .skill-label:hover {
-            font-weight: bold;
-            fill: #000;
         }
     </style>
 </head>
@@ -440,460 +428,413 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1 class="title">Account Owner</h1>
-            <p class="subtitle">Anne Sofie Mikkelsen</p>
+            <h1 class="title">Projektledelse</h1>
+            <p class="subtitle">Kontorindretningsprojekt - Virksomhed X</p>
+            <div class="project-stats">
+                <div class="project-stat">
+                    <div class="stat-number">200 m²</div>
+                    <div class="stat-label">Kontorareal</div>
+                </div>
+                <div class="project-stat">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Medarbejdere</div>
+                </div>
+                <div class="project-stat">
+                    <div class="stat-number">3 måneder</div>
+                    <div class="stat-label">Projektperiode</div>
+                </div>
+                <div class="project-stat">
+                    <div class="stat-number">800.000 kr.</div>
+                    <div class="stat-label">Budget</div>
+                </div>
+            </div>
         </div>
 
         <!-- Navigation -->
         <div class="navigation">
-            <button class="nav-button active" onclick="showSection('profil', this)">Profil</button>
-            <button class="nav-button inactive" onclick="showSection('kompetencer', this)">Kompetencer</button>
-            <button class="nav-button inactive" onclick="showSection('erfaring', this)">Erfaring</button>
-            <button class="nav-button inactive" onclick="showSection('motivation', this)">Motivation</button>
+            <button class="nav-button active" onclick="showSection('problem')">Problemformulering</button>
+            <button class="nav-button inactive" onclick="showSection('metoder')">Anvendte Metoder</button>
+            <button class="nav-button inactive" onclick="showSection('proces')">Projektforløb</button>
+            <button class="nav-button inactive" onclick="showSection('analyser')">Analyser</button>
+            <button class="nav-button inactive" onclick="showSection('resultater')">Resultater</button>
+            <button class="nav-button inactive" onclick="showSection('konklusion')">Konklusion</button>
         </div>
 
-        <!-- Profil Section -->
-        <div id="profil-section" class="content-box">
-            <div class="profile-header">Kreativ problemløser med analytisk tilgang</div>
-            <p class="profile-description">
-                Erfaren koordinator med stærk analytisk baggrund og passion for kreative løsninger. 
-                Specialist i kundeforståelse, projektkoordinering og tværfagligt samarbejde.
+        <!-- Problem Section -->
+        <div id="problem" class="section active">
+            <h2 class="section-title">Problemformulering</h2>
+            <div class="problem-statement">
+                "Hvilke projektledelsesstandarder og -værktøjer blev anvendt i kontorindretningsprojektet for virksomhed X, og hvordan bidrog disse til projektets succesfulde gennemførelse fra initiering til aflevering?"
+            </div>
+            <p style="text-align: center; font-size: 16px; color: #7f8c8d; margin-top: 30px;">
+                Denne opgave analyserer retrospektivt et 100% gennemført kontorindretningsprojekt med fokus på de projektledelsesstandarder og -værktøjer, der blev anvendt, og deres bidrag til projektets positive resultat.
             </p>
             
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Brands håndteret</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">År erfaring</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Igangværende</div>
-                    <div class="stat-label">Projektleder kursus</div>
-                </div>
-            </div>
-
-            <div class="contact-section">
-                <h3 class="section-title">Kontakt</h3>
-                <div class="contact-grid">
-                    <div>
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span> 
-                            <span class="contact-value">annesofieum@outlook.dk</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Telefon:</span> 
-                            <span class="contact-value">+45 20517479</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="contact-item">
-                            <span class="contact-label">Adresse:</span> 
-                            <span class="contact-value">Højbjerg Huse 36, 8840 Rødkærsbro</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">LinkedIn:</span> 
-                            <a href="https://www.linkedin.com/in/anne-sofie-uhrskov-mikkelsen-7a3349197" 
-                               target="_blank" class="link">Anne Sofie Uhrskov Mikkelsen</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="methodology-explanation">
+                <h4>Baggrund for projektet</h4>
+                <p>Virksomhed X havde gennem flere år primært fokuseret på deres kerneforretning uden at prioritere kontorets æstetik og funktionalitet. Det eksisterende kontormiljø var præget af standard møbler og manglende sammenhæng i indretningen.</p>
+                <p>Ledelsen ønskede at transformere kontoret til et smukt og velfungerende arbejdsmiljø, der både skulle inspirere medarbejderne i hverdagen og skabe et professionelt indtryk på kunder og forretningspartnere, der kommer på besøg. Som ekstern projektleder skulle jeg koordinere denne transformation inden for en stram tidsramme og budget.</p>
             </div>
         </div>
 
-        <!-- Kompetencer Section -->
-        <div id="kompetencer-section" class="hidden">
-            <div class="header">
-                <h1 class="profile-header">Kompetence Mapping</h1>
-                <p class="profile-description">Anne Sofie Mikkelsen - Account Owner</p>
-    
-            <div class="main-content">
-                <div class="chart-container">
-                    <h2>Interaktiv Kompetence Radar</h2>
-                    <svg id="skillChart"></svg>
-                    <div class="legend">
-                        <div class="legend-item">
-                            <div class="legend-color" style="background: #000;"></div>
-                            <span>Nuværende niveau</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background: #666;"></div>
-                            <span>Udviklingsområder</span>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="skill-details">
-                    <div class="default-message">
-                        <h3>Klik på en kompetence</h3>
-                        <p>Klik på et punkt eller navn i radaren for at se detaljeret information om Anne Sofies kompetencer og erfaringer.</p>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- Erfaring Section -->
-        <div id="erfaring-section" class="content-box hidden">
-            <h2 class="section-title">Relevante Erfaringer</h2>
+        <!-- Metoder Section -->
+        <div id="metoder" class="section">
+            <h2 class="section-title">Anvendte Projektledelsesstandarder</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #7f8c8d;">
+                10 centrale værktøjer og metoder blev anvendt gennem projektforløbet
+            </p>
             
-            <div class="experience-item">
-                <div class="experience-header" onclick="toggleExperience('adjutant')">
-                    <div class="experience-title">Marketplace Manager</div>
-                    <div class="experience-company">Adjutant (Mar. 2022 – Nov. 2024) • Høj relevans</div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>1. Projektrammen</h4>
+                    <p>Definition af projektets trekant (scope, tid, budget) og opstilling af projektcharter med klare mål og succeskriterier</p>
                 </div>
-                <div id="adjutant-details" class="experience-details">
-                    <div class="skills-grid">
-                        <div class="skill-tag">Stakeholder Management</div>
-                        <div class="skill-tag">Dataanalyse</div>
-                        <div class="skill-tag">Processtyring</div>
-                    </div>
-                    <p><strong>IT-færdigheder:</strong> Excel, PowerBI, Canva</p>
-                    <p><strong>Impact:</strong> 50+ brands håndteret samtidigt</p>
-                    <p>Arbejdede med back office for 50+ internationale brands på Zalando. Sikrede at brands overholdt EPR-lovgivning på tværs af europæiske markeder. Analyserede salgsdata og markedstendenser for at understøtte forretningsbeslutninger.</p>
+                <div class="tool-card">
+                    <h4>2. Projektfaser - Livscyklus</h4>
+                    <p>Systematisk gennemgang af projektets faser med fasegating og milestone-styring mellem faser</p>
                 </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header" onclick="toggleExperience('sofie')">
-                    <div class="experience-title">Kreativ Praktikant</div>
-                    <div class="experience-company">Sofie Ladefoged (Jan. 2022 – Mar. 2022) • Medium relevans</div>
+                <div class="tool-card">
+                    <h4>3. Projektorganisering</h4>
+                    <p>Etablering af projektorganisation med klare roller og ansvar gennem RACI-matrix</p>
                 </div>
-                <div id="sofie-details" class="experience-details">
-                    <div class="skills-grid">
-                        <div class="skill-tag">Content Creation</div>
-                        <div class="skill-tag">Storytelling</div>
-                        <div class="skill-tag">Brand Communication</div>
-                    </div>
-                    <p><strong>IT-færdigheder:</strong> Photoshop, InDesign, WordPress, Klaviyo, Later</p>
-                    <p><strong>Impact:</strong> Bæredygtig kommunikation</p>
-                    <p>Udviklede content og nyhedsbreve med fokus på bæredygtig mode. Arbejdede med storytelling og visuel kommunikation. Bidrog til brandets udtryk og marketingmateriale med fokus på æstetik og budskab.</p>
+                <div class="tool-card">
+                    <h4>4. Interessentanalyse</h4>
+                    <p>Systematisk identificering af alle interessenter med power/interest matrix og engagement strategier</p>
                 </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header" onclick="toggleExperience('salling')">
-                    <div class="experience-title">Indkøbspraktikant</div>
-                    <div class="experience-company">Salling (Aug. 2020 – Dec. 2020) • Medium relevans</div>
+                <div class="tool-card">
+                    <h4>5. Scoping - SMART Mål</h4>
+                    <p>Detaljeret scope definition og arbejdsnedbrydningsstruktur (WBS) med SMART målformulering</p>
                 </div>
-                <div id="salling-details" class="experience-details">
-                    <div class="skills-grid">
-                        <div class="skill-tag">Salgsanalyse</div>
-                        <div class="skill-tag">Leverandørrelationer</div>
-                        <div class="skill-tag">Markedsforståelse</div>
-                    </div>
-                    <p><strong>IT-færdigheder:</strong> Excel, SAP</p>
-                    <p><strong>Impact:</strong> Sortimentsoptimering</p>
-                    <p>Analyserede salgsdata og markedstendenser for at understøtte indkøbsbeslutninger. Samarbejdede med indkøbs- og marketingteams om produktpræsentation. Arbejdede med optimering af processer og fik indsigt i detailhandelens kunde- og leverandørrelationer.</p>
+                <div class="tool-card">
+                    <h4>6. SWOT-analyse</h4>
+                    <p>Analyse af projektets styrker, svagheder, muligheder og trusler for strategisk planlægning</p>
+                </div>
+                <div class="tool-card">
+                    <h4>7. Kommunikationsplan</h4>
+                    <p>Struktureret kommunikationsstrategi med klare kanaler, frekvens og målgrupper</p>
+                </div>
+                <div class="tool-card">
+                    <h4>8. Estimeringsteknikker</h4>
+                    <p>Anvendelse af forskellige metoder til tids- og omkostningsestimering med kontinuerlig opfølgning</p>
+                </div>
+                <div class="tool-card">
+                    <h4>9. Risikoanalyse</h4>
+                    <p>Systematisk risikoidentifikation og -vurdering med håndteringsstrategier</p>
+                </div>
+                <div class="tool-card">
+                    <h4>10. Planlægningsværktøjer</h4>
+                    <p>Gantt-diagrammer, milestone-planlægning og kritisk sti-analyse for koordinering</p>
                 </div>
             </div>
         </div>
 
-        <!-- Motivation Section -->
-        <div id="motivation-section" class="content-box hidden">
-            <h2 class="section-title">Motivation</h2>
-            <div class="motivation-text">
-                <p>
-                    Min passion for design og indretning har længe været mere end en hobby - jeg har fulgt Ambiente 
-                    som virksomhed gennem længere tid og beundrer jeres tilgang til at skabe rum der både inspirerer 
-                    og fungerer optimalt. Min tendens til at fordybe mig i designløsninger og researche forskellige 
-                    indretningskoncepter viser det engagement, jeg ville bringe til Account Owner rollen.
-                </p>
-                <p>
-                    Problemløsning har været en gennemgående styrke gennem min karriere. Min unikke kompetence ligger 
-                    i at forbinde kreative visioner med databaseret analyse - jeg forstår at æstetik skal understøttes 
-                    af funktionalitet og forretningmæssig værdi. Denne balance mellem kreativitet og kommerciel forståelse 
-                    matcher perfekt Ambientes behov for at levere både smukke og profitable løsninger.
-                </p>
-                <p>
-                    Jeg trives i miljøer hvor både det fysiske rum og teamdynamikken inspirerer til høj performance. 
-                    Ambientes fokus på kvalitet og innovation, kombineret med muligheden for at arbejde med både kreative 
-                    specialister og forretningsorienterede kunder, repræsenterer det ideelle professionelle miljø for mig.
-                </p>
+        <!-- Proces Section -->
+        <div id="proces" class="section">
+            <h2 class="section-title">Projektforløb - Fasemodel</h2>
+            
+            <div class="phase-grid">
+                <div class="phase-item">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">Initiering</div>
+                    <div class="phase-description">Projektcharter, stakeholder-identifikation og indledende risikovurdering</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">Planlægning</div>
+                    <div class="phase-description">Omfattende projektplan, ressourceallokering og tidsplanlægning</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">Kravspecifikation</div>
+                    <div class="phase-description">Dokumentation af funktionelle og ikke-funktionelle krav</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">Design</div>
+                    <div class="phase-description">Konceptudvikling med alternativ-evaluering og beslutningstagning</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-number">5</div>
+                    <div class="phase-title">Implementering</div>
+                    <div class="phase-description">Fysisk udførelse med leverandørkoordinering og kvalitetssikring</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-number">6</div>
+                    <div class="phase-title">Afslutning</div>
+                    <div class="phase-description">Test, overdragelse og projektlukning med lessons learned</div>
+                </div>
+            </div>
+
+            <div class="methodology-explanation">
+                <h4>Vandfaldsmetodologi</h4>
+                <p>Projektet fulgte en sekventiel vandfaldsmodel, hvor hver fase skulle afsluttes komplet før den næste påbegyndtes. Dette sikrede grundig planlægning og klare leverancer mellem faserne.</p>
+                <p>Den lineære tilgang var særligt velegnet til kontorindretningsprojektet, da fysiske installationer kræver præcis koordinering og kan ikke itereres på samme måde som softwareudvikling.</p>
+            </div>
+        </div>
+
+        <!-- Analyser Section -->
+        <div id="analyser" class="section">
+            <h2 class="section-title">Projektanalyser</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #7f8c8d;">
+                Komplet analyse af interessenter, risici og projektets styrker/svagheder
+            </p>
+            
+            <!-- Power/Interest Matrix -->
+            <div style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; padding: 40px; margin-bottom: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #34495e; font-size: 24px; font-weight: 300;">Interessentanalyse - Power/Interest Matrix</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);">
+                        <h4 style="margin-bottom: 15px; font-weight: 400;">Høj Magt / Høj Interesse</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.5;"><strong>MANAGE CLOSELY</strong><br>• Virksomhed X's direktion<br>• Projektleder<br>• HR-chef</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);">
+                        <h4 style="margin-bottom: 15px; font-weight: 400;">Høj Magt / Lav Interesse</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.5;"><strong>KEEP SATISFIED</strong><br>• CFO/Økonomichef<br>• Bestyrelsen<br>• IT-afdelingen</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);">
+                        <h4 style="margin-bottom: 15px; font-weight: 400;">Lav Magt / Høj Interesse</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.5;"><strong>KEEP INFORMED</strong><br>• Medarbejdere<br>• Fagforening<br>• Receptionspersonale</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #95a5a6, #7f8c8d); color: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(149, 165, 166, 0.3);">
+                        <h4 style="margin-bottom: 15px; font-weight: 400;">Lav Magt / Lav Interesse</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.5;"><strong>MONITOR</strong><br>• Eksterne kunder<br>• Leverandørers underlev.<br>• Lokale myndigheder</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SWOT-analyse -->
+            <div style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; padding: 40px; margin-bottom: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #34495e; font-size: 24px; font-weight: 300;">SWOT-analyse</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="background: linear-gradient(145deg, #d5f4e6, #a8e6cf); padding: 30px; border-radius: 15px; border: 2px solid #27ae60; box-shadow: 0 6px 20px rgba(39, 174, 96, 0.2);">
+                        <h4 style="color: #1e8449; margin-bottom: 20px; font-weight: 400; font-size: 18px;">Styrker</h4>
+                        <ul style="color: #145a32; line-height: 1.6; margin: 0; padding-left: 20px; font-size: 14px;">
+                            <li>Erfaren projektleder med æstetisk forståelse</li>
+                            <li>Klart defineret budget (800.000 kr.)</li>
+                            <li>Engageret ledelse med klar vision</li>
+                            <li>Motiverede medarbejdere for forandring</li>
+                            <li>Overskueligt projektomfang (200 m²)</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #fdeaa7, #fad02e); padding: 30px; border-radius: 15px; border: 2px solid #f39c12; box-shadow: 0 6px 20px rgba(243, 156, 18, 0.2);">
+                        <h4 style="color: #d68910; margin-bottom: 20px; font-weight: 400; font-size: 18px;">Svagheder</h4>
+                        <ul style="color: #a0651a; line-height: 1.6; margin: 0; padding-left: 20px; font-size: 14px;">
+                            <li>Begrænset design-erfaring hos kunden</li>
+                            <li>Forskellige æstetiske præferencer</li>
+                            <li>Stramt budget for premium løsninger</li>
+                            <li>Kort tidsramme (3 måneder)</li>
+                            <li>Balance mellem funktion og æstetik</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #d6eaf8, #a9cce3); padding: 30px; border-radius: 15px; border: 2px solid #3498db; box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);">
+                        <h4 style="color: #2874a6; margin-bottom: 20px; font-weight: 400; font-size: 18px;">Muligheder</h4>
+                        <ul style="color: #1b4f72; line-height: 1.6; margin: 0; padding-left: 20px; font-size: 14px;">
+                            <li>Markant forbedring af kundeindtryk</li>
+                            <li>Øget medarbejdertilfredshed</li>
+                            <li>Stærk reference case</li>
+                            <li>Etablering af design-DNA</li>
+                            <li>Udvidelse til andre områder</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #fadbd8, #f1948a); padding: 30px; border-radius: 15px; border: 2px solid #e74c3c; box-shadow: 0 6px 20px rgba(231, 76, 60, 0.2);">
+                        <h4 style="color: #c0392b; margin-bottom: 20px; font-weight: 400; font-size: 18px;">Trusler</h4>
+                        <ul style="color: #922b21; line-height: 1.6; margin: 0; padding-left: 20px; font-size: 14px;">
+                            <li>Subjektive æstetiske vurderinger</li>
+                            <li>Leveringsforsinkelser på møbler</li>
+                            <li>Modstand mod forandringer</li>
+                            <li>Budget overskridelser</li>
+                            <li>Misforståelser om design koncepter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risikoanalyse -->
+            <div style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; padding: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #34495e; font-size: 24px; font-weight: 300;">Risikoanalyse Matrix</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: linear-gradient(135deg, #d5f4e6, #a8e6cf); padding: 25px; border-radius: 12px; border: 2px solid #27ae60; text-align: center; cursor: pointer;" onclick="showRiskDetails('low')">
+                        <h4 style="color: #1e8449; margin-bottom: 15px; font-weight: 400;">🟢 Lav Risiko</h4>
+                        <div style="font-size: 14px; color: #145a32; margin-bottom: 10px;"><strong>Mindre designændringer</strong></div>
+                        <div style="font-size: 12px; color: #196f3d;">Sandsynlighed: 30% | Impact: Lav</div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #fdeaa7, #fad02e); padding: 25px; border-radius: 12px; border: 2px solid #f39c12; text-align: center; cursor: pointer;" onclick="showRiskDetails('medium')">
+                        <h4 style="color: #d68910; margin-bottom: 15px; font-weight: 400;">🟡 Medium Risiko</h4>
+                        <div style="font-size: 14px; color: #a0651a; margin-bottom: 10px;"><strong>Leveringsforsinkelser</strong></div>
+                        <div style="font-size: 12px; color: #b7950b;">Sandsynlighed: 60% | Impact: Medium</div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #fadbd8, #f1948a); padding: 25px; border-radius: 12px; border: 2px solid #e74c3c; text-align: center; cursor: pointer;" onclick="showRiskDetails('high')">
+                        <h4 style="color: #c0392b; margin-bottom: 15px; font-weight: 400;">🔴 Høj Risiko</h4>
+                        <div style="font-size: 14px; color: #922b21; margin-bottom: 10px;"><strong>Budget overskridelse</strong></div>
+                        <div style="font-size: 12px; color: #a93226;">Sandsynlighed: 40% | Impact: Høj</div>
+                    </div>
+                </div>
+                <div style="text-align: center; color: #7f8c8d; font-style: italic; font-weight: 300;">Klik på risici for detaljerede håndteringsstrategier</div>
+            </div>
+        </div>
+
+        <!-- Resultater Section -->
+        <div id="resultater" class="section">
+            <h2 class="section-title">Projektresultater</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <span class="result-number">98%</span>
+                    <div class="result-label">af det godkendte budget</div>
+                </div>
+                <div class="result-item">
+                    <span class="result-number">-2</span>
+                    <div class="result-label">dage før deadline</div>
+                </div>
+                <div class="result-item">
+                    <span class="result-number">9,4/10</span>
+                    <div class="result-label">kundetilfredshed</div>
+                </div>
+                <div class="result-item">
+                    <span class="result-number">8,9/10</span>
+                    <div class="result-label">medarbejdertilfredshed</div>
+                </div>
+                <div class="result-item">
+                    <span class="result-number">95%</span>
+                    <div class="result-label">positive besøgskommentarer</div>
+                </div>
+                <div class="result-item">
+                    <span class="result-number">23</span>
+                    <div class="result-label">arbejdspakker leveret</div>
+                </div>
+            </div>
+
+            <div class="key-learnings">
+                <h3>Målbare Succesindikatorer</h3>
+                <div class="learning-item">
+                    <strong>Tidsplan:</strong> Projektet blev afsluttet 2 dage før deadline gennem effektiv koordinering med møbelleverandører
+                </div>
+                <div class="learning-item">
+                    <strong>Budget:</strong> Slutomkostninger på 98% af budget ved smart prioritering mellem æstetik og funktionalitet
+                </div>
+                <div class="learning-item">
+                    <strong>Æstetisk resultat:</strong> 95% positive kommentarer fra besøgende bekræfter vellykket transformation af kundeindtryk
+                </div>
+                <div class="learning-item">
+                    <strong>Medarbejderengagement:</strong> Høj tilfredshed takket være involvering i designprocessen og fokus på ergonomi
+                </div>
+            </div>
+        </div>
+
+        <!-- Konklusion Section -->
+        <div id="konklusion" class="section">
+            <h2 class="section-title">Konklusion & Læringer</h2>
+            
+            <div class="key-learnings">
+                <h3>Kritiske Succesfaktorer</h3>
+                <div class="learning-item">
+                    <strong>Æstetisk planlægning:</strong> Tidlig visualisering og mockups sikrede fælles forståelse af det ønskede udtryk før implementering
+                </div>
+                <div class="learning-item">
+                    <strong>Balanceret prioritering:</strong> Systematisk afvejning mellem æstetiske ønsker og funktionelle behov inden for budgetrammen
+                </div>
+                <div class="learning-item">
+                    <strong>Leverandør koordinering:</strong> Proaktiv styring af møbler og materialer forhindrede forsinkelser og sikrede kvalitet
+                </div>
+                <div class="learning-item">
+                    <strong>Brugerinvolvering:</strong> Medarbejdernes deltagelse i designvalg skabte ejerskab og højere tilfredshed
+                </div>
+                <div class="learning-item">
+                    <strong>Kundefokus:</strong> Særlig opmærksomhed på receptionsområde og mødelokaler gav ønsket professionelt indtryk
+                </div>
+            </div>
+
+            <div class="methodology-explanation">
+                <h4>Overordnet Konklusion</h4>
+                <p>Projektets succes demonstrerer vigtigheden af at balancere æstetiske og funktionelle krav i kontorindretningsprojekter. Ved at involvere både medarbejdere og ledelse i designprocessen, og fokusere særligt på kundeområder, lykkedes det at skabe et arbejdsmiljø, der både inspirerer internt og imponerer eksternt.</p>
+                <p>Kombinationen af struktureret projektledelse og kreativ designtænkning viste sig effektiv til at håndtere de udfordringer, der opstår når æstetik skal forenes med funktionalitet inden for begrænsede ressourcer.</p>
+                <p>Resultaterne understreger værdien af at prioritere kontormiljøet som en investering i både medarbejdertrivsel og virksomhedens professionelle image over for kunder og partnere.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #ecf0f1, #d5dbdb); border-radius: 15px; border: 2px solid #34495e;">
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">Tak for opmærksomheden</h3>
+                <p style="color: #7f8c8d; font-size: 16px;">Spørgsmål til projektanalysen og anvendte metoder?</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Global variables
-        var currentSection = 'profil';
+        var currentSection = 'problem';
         
-        function showSection(sectionName, buttonElement) {
+        function showSection(sectionName) {
+            console.log('Switching to section:', sectionName);
+            
             // Hide all sections
-            var sections = ['profil', 'kompetencer', 'erfaring', 'motivation'];
+            var sections = ['problem', 'metoder', 'proces', 'analyser', 'resultater', 'konklusion'];
+            
             for (var i = 0; i < sections.length; i++) {
-                var sectionElement = document.getElementById(sections[i] + '-section');
+                var sectionElement = document.getElementById(sections[i]);
                 if (sectionElement) {
-                    sectionElement.style.display = 'none';
+                    sectionElement.classList.remove('active');
                 }
             }
 
             // Show selected section
-            var targetSection = document.getElementById(sectionName + '-section');
+            var targetSection = document.getElementById(sectionName);
             if (targetSection) {
-                targetSection.style.display = 'block';
+                targetSection.classList.add('active');
             }
 
             // Update navigation buttons
-            var buttons = document.getElementsByClassName('nav-button');
+            var buttons = document.querySelectorAll('.nav-button');
             for (var j = 0; j < buttons.length; j++) {
                 buttons[j].className = 'nav-button inactive';
             }
 
-            // Activate clicked button
-            if (buttonElement) {
-                buttonElement.className = 'nav-button active';
+            // Find and activate the correct button
+            var buttonTexts = ['problem', 'metoder', 'proces', 'analyser', 'resultater', 'konklusion'];
+            var buttonIndex = buttonTexts.indexOf(sectionName);
+            if (buttonIndex >= 0 && buttons[buttonIndex]) {
+                buttons[buttonIndex].className = 'nav-button active';
             }
             
             currentSection = sectionName;
         }
 
-        function toggleExperience(experienceId) {
-            var details = document.getElementById(experienceId + '-details');
-            if (details) {
-                if (details.style.display === 'block') {
-                    details.style.display = 'none';
-                } else {
-                    // Close all other experience details
-                    var allDetails = document.getElementsByClassName('experience-details');
-                    for (var k = 0; k < allDetails.length; k++) {
-                        allDetails[k].style.display = 'none';
-                    }
-                    
-                    // Open clicked one
-                    details.style.display = 'block';
+        // Add Risk interaction
+        function showRiskDetails(level) {
+            var riskInfo = {
+                'low': {
+                    title: '🟢 Lav Risiko - Mindre designændringer',
+                    content: 'Beskrivelse: Små justeringer i design efter medarbejderfeedback\n\n• Sandsynlighed: 30%\n• Impact: Lav (1-2 dages forsinkelse)\n• Håndtering: Buffer tid i tidsplan\n• Kontingency: Forudgående visualiseringer og mockups\n• Monitoring: Ugentlige feedback sessioner'
+                },
+                'medium': {
+                    title: '🟡 Medium Risiko - Leveringsforsinkelser',
+                    content: 'Beskrivelse: Forsinkelser på specialmøbler og materialer\n\n• Sandsynlighed: 60%\n• Impact: Medium (1-2 ugers forsinkelse)\n• Håndtering: Tidlige bestillinger og leverandør-backup\n• Kontingency: Alternative leverandører identificeret\n• Monitoring: Daglig leverandør kommunikation'
+                },
+                'high': {
+                    title: '🔴 Høj Risiko - Budget overskridelse',
+                    content: 'Beskrivelse: Overskridelse af 800.000 kr. budget på specialløsninger\n\n• Sandsynlighed: 40%\n• Impact: Høj (100.000+ kr. overskridelse)\n• Håndtering: 10% budget reserve (80.000 kr.)\n• Kontingency: Prioriteringsliste over must-have vs. nice-to-have\n• Monitoring: Ugentlig budget tracking'
                 }
+            };
+
+            if (riskInfo[level]) {
+                alert(riskInfo[level].title + '\n\n' + riskInfo[level].content);
             }
         }
 
-        // Initialize when page loads - old school way
-        window.onload = function() {
-            // Hide all sections except profil
-            var sections = ['kompetencer', 'erfaring', 'motivation'];
-            for (var i = 0; i < sections.length; i++) {
-                var sectionElement = document.getElementById(sections[i] + '-section');
-                if (sectionElement) {
-                    sectionElement.style.display = 'none';
-                }
-            }
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded - initializing navigation');
+            showSection('problem');
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            var sections = ['problem', 'metoder', 'proces', 'analyser', 'resultater', 'konklusion'];
+            var currentIndex = sections.indexOf(currentSection);
             
-            // Make sure profil is visible
-            var profilSection = document.getElementById('profil-section');
-            if (profilSection) {
-                profilSection.style.display = 'block';
+            if (e.key === 'ArrowRight' && currentIndex < sections.length - 1) {
+                showSection(sections[currentIndex + 1]);
+            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                showSection(sections[currentIndex - 1]);
             }
-            
-            // Set initial button states
-            var buttons = document.getElementsByClassName('nav-button');
-            for (var j = 0; j < buttons.length; j++) {
-                if (j === 0) {
-                    buttons[j].className = 'nav-button active';
-                } else {
-                    buttons[j].className = 'nav-button inactive';
-                }
-            }
-        };
-
-        const skills = [
-            {
-                name: "Kundeforståelse",
-                level: 5,
-                description: "Dyb forståelse for kunders beslutningsprocesser og behov gennem arbejde med 50+ internationale brands.",
-                needsDescription: "At forstå kunders beslutningsprocesser og pains/gains",
-                contribution: "Erfaring med at arbejde med 50+ brands og analysere deres forskellige behov og udfordringer. Bred indsigt i forskellige kundetyper og markedssegmenter."
-            },
-            {
-                name: "Account Management",
-                level: 4,
-                description: "Struktureret tilgang til kundearbejde og erfaring med at håndtere flere kunder samtidigt.",
-                needsDescription: "Systematisk CRM-arbejde og pipeline udvikling",
-                contribution: "Struktureret tilgang til dataarbejde og erfaring med at prioritere mellem mange opgaver samtidigt. Erfaring med stakeholder management fra Adjutant."
-            },
-            {
-                name: "Projektkoordinering",
-                level: 4,
-                description: "Stærk koordinator med erfaring i tværfagligt samarbejde og procesoptimering.",
-                needsDescription: "Koordinering mellem teams og præsentation af kreative løsninger",
-                contribution: "Erfaring som bindeled mellem teams og kreativ baggrund til at formidle ideer inspirerende. Igangværende projektleder kursus styrker disse kompetencer."
-            },
-            {
-                name: "Dataanalyse",
-                level: 4,
-                description: "Analytisk tilgang med erfaring i at analysere salgsdata og markedstendenser.",
-                needsDescription: "Forståelse for KPI'er og performance metrics",
-                contribution: "Erfaring med analyse af salgsdata og markedstendenser fra både Adjutant og Salling. Struktureret tilgang til målsætning og databaseret beslutningstagning."
-            },
-            {
-                name: "Projektøkonomi",
-                level: 2,
-                description: "Grundlæggende forretningsforståelse som udvikles gennem projektleder kursus.",
-                needsDescription: "Forståelse for projektlønsom og pricing",
-                contribution: "Grundlæggende forretningsforståelse og igangværende projektleder kursus giver indsigt i projektøkonomi. Motivation for at udvikle denne kompetence."
-            },
-            {
-                name: "Kreativ Kommunikation",
-                level: 4,
-                description: "Stærk kreativ baggrund med erfaring i storytelling og brand communication.",
-                needsDescription: "Præsentation af kreative løsninger og storytelling",
-                contribution: "Kreativ baggrund fra arbejde med Sofie Ladefoged og passion for design. Evne til at formidle komplekse ideer visuelt og inspirerende."
-            },
-            {
-                name: "Salgsprocesser",
-                level: 3,
-                description: "Udviklingsområde med stor motivation for at lære kommercielle processer.",
-                needsDescription: "Evne til at lukke salg og drive forretningsudvikling",
-                contribution: "Struktureret tilgang til målsætning og stor motivation for at lære salgsprocesser. Grundlæggende forståelse for kunde-leverandør relationer fra Salling."
-            },
-            {
-                name: "Markedsforståelse",
-                level: 4,
-                description: "Erfaring med markedsanalyse og forståelse for forskellige brancher og trends.",
-                needsDescription: "Indsigt i markedstendenser og konkurrenceforhold",
-                contribution: "Erfaring med markedsanalyse fra Salling og forståelse for internationale markeder fra Adjutant. Passion for design og indretning giver branchespecifik indsigt."
-            }
-        ];
-
-        const svg = document.getElementById('skillChart');
-        const skillDetails = document.querySelector('.skill-details');
-        const center = { x: 250, y: 250 };
-        const maxRadius = 170;
-        const levels = 5;
-
-        function setupSVG() {
-            svg.setAttribute('viewBox', '0 0 500 500');
-            svg.innerHTML = '';
-        }
-
-        function drawRadarBackground() {
-            // Draw concentric circles
-            for (let i = 1; i <= levels; i++) {
-                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                circle.setAttribute('cx', center.x);
-                circle.setAttribute('cy', center.y);
-                circle.setAttribute('r', (maxRadius / levels) * i);
-                circle.setAttribute('fill', 'none');
-                circle.setAttribute('stroke', '#e0e6ed');
-                circle.setAttribute('stroke-width', '1');
-                svg.appendChild(circle);
-            }
-
-            // Draw axis lines
-            const angleStep = (2 * Math.PI) / skills.length;
-            skills.forEach((_, index) => {
-                const angle = (index * angleStep) - (Math.PI / 2);
-                const x = center.x + Math.cos(angle) * maxRadius;
-                const y = center.y + Math.sin(angle) * maxRadius;
-
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                line.setAttribute('x1', center.x);
-                line.setAttribute('y1', center.y);
-                line.setAttribute('x2', x);
-                line.setAttribute('y2', y);
-                line.setAttribute('stroke', '#e0e6ed');
-                line.setAttribute('stroke-width', '1');
-                svg.appendChild(line);
-            });
-
-            // Add level labels
-            for (let i = 1; i <= levels; i++) {
-                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                text.setAttribute('x', center.x + 5);
-                text.setAttribute('y', center.y - (maxRadius / levels) * i + 5);
-                text.setAttribute('font-size', '12');
-                text.setAttribute('fill', '#666');
-                text.textContent = i;
-                svg.appendChild(text);
-            }
-        }
-
-        function drawRadarChart() {
-            const angleStep = (2 * Math.PI) / skills.length;
-            
-            // Draw polygon
-            const points = skills.map((skill, index) => {
-                const angle = (index * angleStep) - (Math.PI / 2);
-                const radius = (skill.level / levels) * maxRadius;
-                const x = center.x + Math.cos(angle) * radius;
-                const y = center.y + Math.sin(angle) * radius;
-                return `${x},${y}`;
-            }).join(' ');
-
-            const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-            polygon.setAttribute('points', points);
-            polygon.setAttribute('fill', 'rgba(0, 0, 0, 0.1)');
-            polygon.setAttribute('stroke', '#000');
-            polygon.setAttribute('stroke-width', '2');
-            svg.appendChild(polygon);
-
-            // Draw skill points and labels
-            skills.forEach((skill, index) => {
-                const angle = (index * angleStep) - (Math.PI / 2);
-                const radius = (skill.level / levels) * maxRadius;
-                const x = center.x + Math.cos(angle) * radius;
-                const y = center.y + Math.sin(angle) * radius;
-
-                // Skill point
-                const point = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                point.setAttribute('cx', x);
-                point.setAttribute('cy', y);
-                point.setAttribute('r', skill.level >= 3 ? '8' : '6');
-                point.setAttribute('fill', skill.level >= 3 ? '#000' : '#666');
-                point.setAttribute('stroke', 'white');
-                point.setAttribute('stroke-width', '2');
-                point.classList.add('skill-point');
-                point.addEventListener('click', () => showSkillDetails(skill));
-                svg.appendChild(point);
-
-                // Skill labels
-                const labelRadius = maxRadius + 30;
-                const labelX = center.x + Math.cos(angle) * labelRadius;
-                const labelY = center.y + Math.sin(angle) * labelRadius;
-
-                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                text.setAttribute('x', labelX);
-                text.setAttribute('y', labelY);
-                text.setAttribute('text-anchor', labelX > center.x ? 'start' : 'end');
-                text.setAttribute('dominant-baseline', 'middle');
-                text.setAttribute('font-size', '12');
-                text.setAttribute('fill', '#333');
-                text.classList.add('skill-label');
-                text.textContent = skill.name;
-                text.addEventListener('click', () => showSkillDetails(skill));
-                svg.appendChild(text);
-            });
-        }
-
-        function showSkillDetails(skill) {
-            const levelNames = ['', 'Begynder', 'Grundlæggende', 'Kompetent', 'Erfaren', 'Ekspert'];
-            
-            skillDetails.innerHTML = `
-                <h3>
-                    ${skill.name}
-                    <span class="skill-level">${levelNames[skill.level]} (${skill.level}/5)</span>
-                </h3>
-                <p class="skill-description">${skill.description}</p>
-                
-                <div class="competency-section">
-                    <h4>I har brug for:</h4>
-                    <p>${skill.needsDescription}</p>
-                </div>
-
-                <div class="competency-section">
-                    <h4>Dette kan jeg bidrage med:</h4>
-                    <p>${skill.contribution}</p>
-                </div>
-            `;
-        }
-
-        function init() {
-            setupSVG();
-            drawRadarBackground();
-            drawRadarChart();
-        }
-
-        init();
+        });
     </script>
 </body>
 </html>
